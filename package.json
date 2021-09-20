@@ -1,6 +1,6 @@
 {
   "name": "proyecto-1a-matematicas-edw",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Proyecto de matematicas sencillo para aprender NodeJs y subirlo a NPM",
   "main": "index.js",
   "scripts": {
