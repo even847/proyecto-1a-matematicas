@@ -7,8 +7,8 @@ module.exports = {
    * @param {*} n2 Número de dos de la suma 
    * @returns 
    */
-  suma: (n1, n2) =>{
-    return n1 + n2
+  suma: function (n1, n2) {
+    return (this.esNumero(n1, n2) ? n1 + n2 : this.mensajeError());
   },
 
     /**
@@ -19,8 +19,8 @@ module.exports = {
    * @param {*} n2 Número de dos de la resta 
    * @returns 
    */
-  resta: (n1, n2) =>{
-    return n1 - n2
+  resta: function (n1, n2) {
+    return (this.esNumero(n1 , n2) ? n1 - n2: this.mensajeError());
   },
 
     /**
@@ -31,8 +31,8 @@ module.exports = {
    * @param {*} n2 Número de dos de la multiplicación 
    * @returns 
    */
-  multiplicacion: (n1, n2) =>{
-    return n1 * n2
+  multiplicacion: function (n1, n2) {
+    return (this.esNumero(n1, n2) ? n1 * n2: this.mensajeError());
   },
 
     /**
@@ -43,7 +43,22 @@ module.exports = {
    * @param {*} n2 Número de dos de la División 
    * @returns 
    */
-  division: (n1, n2) =>{
-    return n1 / n2
+  division: function (n1, n2) {
+    return (this.esNumero(n1 , n2) ? n1 / n2: this.mensajeError());
   },
+  /**
+   * Mensaje de error que se ejecuta cuando no tengamos valores númericos
+   */
+  mensajeError: () => {
+    console.log('Un valor o los dos valores no son númericos');
+  },
+   /**
+   * Comprueba que son valores númericos
+   */
+  esNumero:  (n1, n2) => {
+    if(typeof n1 !== 'number' || typeof n2 !== 'number'){
+      return false;
+    }
+    return true;
+  }
 }
